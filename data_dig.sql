@@ -113,3 +113,7 @@ INSERT INTO top_movies(rank,title,studio,worldwide,domestic_money,domestic_perce
 SELECT title, MAX(worldwide) AS "Dollar gainer: worldwide" FROM top_movies;
 
 SELECT title, MIN(year) AS oldest FROM top_movies;
+
+SELECT studio, AVG(year) AS "Average year" FROM top_movies GROUP BY studio;
+
+SELECT studio, COUNT(rank) AS "# of top movies" FROM top_movies GROUP BY studio HAVING "# of top movies" > 10;
