@@ -128,3 +128,7 @@ SELECT title, year,
     END AS rating
 FROM top_movies
 ORDER BY title;
+
+SELECT * FROM top_movies WHERE studio = "Dv" OR studio = "Fox" ORDER BY title;
+
+SELECT * FROM top_movies WHERE rank <= 50 AND domestic_percent > 40 ORDER BY rank;
