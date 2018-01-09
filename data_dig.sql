@@ -117,3 +117,14 @@ SELECT title, MIN(year) AS oldest FROM top_movies;
 SELECT studio, AVG(year) AS "Average year" FROM top_movies GROUP BY studio;
 
 SELECT studio, COUNT(rank) AS "# of top movies" FROM top_movies GROUP BY studio HAVING "# of top movies" > 10;
+
+SELECT title, year,
+    CASE
+        WHEN year >= 2010 THEN "Recent and New"
+        WHEN year >= 2000 THEN "Still Fresh"
+        WHEN year >= 1990 THEN "Good Times"
+        WHEN year >= 1980 THEN "Getting Rusty"
+        ELSE "Time for a remastered version"
+    END AS rating
+FROM top_movies
+ORDER BY title;
