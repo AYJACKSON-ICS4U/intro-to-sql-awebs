@@ -36,5 +36,7 @@ INSERT INTO books (author, name, year) VALUES ("Neil Gaiman", "American Gods", 2
 INSERT INTO books (author, name, year) VALUES ("Ian McEwan", "Atonement", 2001);
 INSERT INTO books (author, name, year) VALUES ("Kazuo Ishiguro", "The Buried Giant", 2015);
 
+SELECT books.name AS Book,people.name AS Author FROM books JOIN people ON books.id=people.id;
+
 SELECT * FROM people;
 SELECT * FROM books;
